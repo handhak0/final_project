@@ -25,6 +25,7 @@ div.header {
     position:fixed;
     width: 100%;
     padding-left :14pt;
+    margin-right: 0;
 }
 
 
@@ -67,6 +68,13 @@ td{
     
 }
 
+img{
+  width : 146px;
+  height : 146px;
+  object-fit: cover;
+  border-radius: 8pt ;
+}
+
 div.contents{
     left : 0;
     right: 0;
@@ -76,20 +84,23 @@ div.contents{
 
 
 
-  .fab-container {
+  .container {
     position: fixed;
     bottom: 50px;
     right: 50px;
     z-index: 999;
     cursor: pointer;
+    
   }
   
-  .fab-icon-holder {
+  .icon-holder {
     width: 50px;
     height: 50px;
     border-radius: 100%;
     background:#F85D5D;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    margin-left : 300px;
+    
   }
   
   .fab-icon-holder:hover {
@@ -111,42 +122,6 @@ div.contents{
     background: #F85D5D;
   }
   
-  .fab-options {
-    list-style-type: none;
-    margin: 0;
-    position: absolute;
-    bottom: 70px;
-    right: 0;
-    opacity: 0;
-    transition: all 0.3s ease;
-    transform: scale(0);
-    transform-origin: 85% bottom;
-  }
-  
-  .fab:hover+.fab-options,
-  .fab-options:hover {
-    opacity: 1;
-    transform: scale(1);
-  }
-  
-  .fab-options li {
-    display: flex;
-    justify-content: flex-end;
-    padding: 5px;
-  }
-  
-  .fab-label {
-    padding: 2px 5px;
-    align-self: center;
-    user-select: none;
-    white-space: nowrap;
-    border-radius: 3px;
-    font-size: 16px;
-    background: #666666;
-    color: #ffffff;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    margin-right: 10px;
-  }
 
   .footer{
       position: relative;
@@ -176,10 +151,31 @@ li  { float: left;
      margin-left : 25px; 
      height: 25pt;
      width: 25pt;
-     background-color: #C4C4C4;
 }
 
-li .current {
-    color : #F85D5D;
+
+
+
+.user {
+  margin-left : 300px;
+  margin-right: 0;
+  font-size: 20px;
 }
 
+.setting {
+  margin-left : 8px;
+  margin-right: 0;
+  font-size: 20px;
+}
+
+div.nav{
+  margin-left: 6px;
+  font-size: 25px;
+  color : #C4C4C4;
+}
+
+div.now {
+  color : #F85D5D; 
+  font-size : 25px;  
+  margin-left: 6px;
+}
