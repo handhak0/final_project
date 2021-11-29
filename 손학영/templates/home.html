@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>home</title>
     <link href="../static/home.css" rel="stylesheet" type="text/css" />
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
+    <style> 
+        a:visited { color: #C4C4C4; text-decoration-color: none;}
+    </style>
 </head>
+
+
 <body>
     <div class = 'contents'> 
         <header>
@@ -21,44 +28,43 @@
             <div class = 'title'><u><p>당신의 소설 속<br>주인공을 만들어보세요!</p></u></div>
             <table>
                 <tr><!--첫 번째 줄-->
-                    <td><img src = "../img_data/20211119_101611_11.png"></img></td>
-                    <td><img src = "../img_data/20211119_101611_12.png"></img></td>
+                    <td><img id = "imgId" src = ""></td>
+                    <td><img id = "imgId" src = ""></td>
                 </tr>
                 <tr><!--두 번째 줄-->
-                    <td><img src = "../img_data/20211119_101611_13.png"></img></td>
-                    <td><img src = "../img_data/20211119_101611_14.png"></img></td>
+                    <td><img id = "imgId" src = ""></td>
+                    <td><img id = "imgId" src = ""></td>
                 </tr>
                 <tr><!--세 번째 줄-->
-                    <td><img src = {{img5}}></img></td>
-                    <td><img src = {{img6}}></img></td>
+                    <td><img id = "imgId" src = ""></td>
+                    <td><img id = "imgId" src = ""></td>
                 </tr>
-                <tr><!--네 번째 줄-->
-                    <td><img src = {{img7}}></img></td>
-                    <td><img src = {{img8}}></img></td>
-                </tr>
+                
             </table>
     
 
-            <div class="container">
-                <div class="icon-holder">
-                  <i class="fas fa-plus" style = "color : white; padding-top: 15px; padding-left:16px; font-size : 20px;"></i>
-                </div>
-              </div>
+                
+        </main>
 
-              <div class = 'footer'>
+        <div class = 'footer'>
                     <ul>
-                        <div class = 'now' ><li><i class="fas fa-home"></i></li></div>
-                        <div class = 'nav'><li><i class="fas fa-pencil-alt"></i></li></div>
-                        <div class = 'nav'><li><i class="fas fa-comments"></i></li></div>
+                        <div class = 'now' ><li><a href = '/home' style = "color : #F85D5D;"><i class="fas fa-home"></a></i></li></div>
+                        <div class = 'nav'><li><a href = '/write' style = "color : #C4C4C4;" ><i class="fas fa-pencil-alt"></i></a></li></div>
+                        <div class = 'nav'><li><a href = '/chatbot' style = "color : #C4C4C4;"><i class="fas fa-comments"></i></a></li></div>
                         <div class = 'nav'><li><i class="fas fa-bars"></i></li></div>
 
                     </ul>
-            </div>
-        </main>
+        </div>
     </div>
     
+    <script>
+        var imgAll = document.querySelectorAll("#imgId");
+            for (var i=0; i<6; i++){
+               imgAll[i].src = "/home_img/"+ i;
+           }
 
-    
+</script>
+       
     
 
 </body>
