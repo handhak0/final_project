@@ -18,13 +18,15 @@
 <body>
     <div class = 'contents'> 
         <header>
-            <div class = 'header'>PixByGAN</div>
-            <span class = 'user'><i class="fas fa-user" style = "color : #F85D5D" ></i></span>
+            <div class = 'header'>PixByGAN
+            </div>
+            <span class = 'user'><a href  = "/login"><i class="fas fa-user" style = "color : #F85D5D" ></i></a></span>
             <span class = 'setting'><i class="fas fa-cog"style = "color : #F85D5D"></i></span>
             
         </header>
         
         <main>
+            
             <div class = 'title'><u><p>당신의 소설 속<br>주인공을 만들어보세요!</p></u></div>
             <table>
                 <tr><!--첫 번째 줄-->
@@ -40,6 +42,8 @@
                     <td><img id = "imgId" src = ""></td>
                 </tr>
                 
+                <!-- <a id = "imgPathId" href = "" ></a> -->
+
             </table>
     
 
@@ -59,9 +63,14 @@
     
     <script>
         var imgAll = document.querySelectorAll("#imgId");
-            for (var i=0; i<6; i++){
+        for (var i=0; i<6; i++){
                imgAll[i].src = "/home_img/"+ i;
            }
+
+        //var imgPathAll = document.querySelectorAll("#imgPathId");
+        //for (var i=0; i<6; i++){
+           // imgPathAll[i].href = "/home_imgshow/" + i;
+       // }
 
 </script>
        

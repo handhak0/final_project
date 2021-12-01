@@ -72,7 +72,7 @@ img{
   width : 145px;
   height : 145px;
   object-fit: cover;
-  border-radius: 8pt ;
+  border-radius: 2pt ;
 }
 
 div.contents{
@@ -207,27 +207,6 @@ span.photo_guide{
     
 }
 
-
-input[type = "submit"] {
-    width : 300px;
-    height : 35px;
-    background-color: #F85D5D;
-    border: 2px solid #F85D5D;
-    color: white;
-    padding: 5px 32px;
-    text-decoration: none;
-    margin-left : 8px;
-    border-radius: 3px;
-    cursor: pointer;
-
-}
-
-div.select{
-    height : 48px;
-    padding-top: 12px;
-    padding-left: 10px;
-}
-
 #input-file{
   display: none;
 }
@@ -246,4 +225,72 @@ div.guide_box{
   top: 35px; 
   left: 160px;
   z-index: 1;
+}
+
+
+
+input[type='radio']:after {
+  width: 13px;
+  height: 13px;
+  border-radius: 10px;
+  top: -2px;
+  left: -4px;
+  position: relative;
+  background-color: #C4C4C4;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+  width: 13px;
+  height: 13px;
+  border-radius: 10px;
+  top: -2px;
+  left: -4px;
+  position: relative;
+  background-color: #F85D5D;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+div.select{
+    height : 48px;
+    padding-top: 12px;
+    padding-left: 10px;
+    margin-left: 5px;
+}
+
+
+.select_name{
+  font-weight: 700;
+  margin-right:20px;
+}
+
+
+div.guide{
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 270px;
+  font-size: 12px;
+  padding : 10pt;
+  border: 0.5px solid #e5e5e5;
+}
+
+input[type = "submit"] {
+  width : 300px;
+  height : 35px;
+  background-color: #F85D5D;
+  border: 2px solid #F85D5D;
+  color: white;
+  padding: 5px 32px;
+  text-decoration: none;
+  margin-left : 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 15px;
+
 }

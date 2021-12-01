@@ -24,13 +24,12 @@ div.header {
     color: #F85D5D;
     font-weight: bolder;
     position:fixed;
-    width: 280px;
+    width: 100px;
     padding-left :14pt;
-    margin-right: 0;
 }
 
 
-a:visited { color: #C4C4C4; text-decoration-color: none;}
+
 
 
 main {
