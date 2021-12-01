@@ -8,6 +8,14 @@ import requests
 
 import uvicorn
 import os
+
+import sys
+sys.path.append("C:/Users/sonso/Desktop/Git/멀티캠퍼스/04.FinalProject/손학영/Face_segmentation")
+
+# 모델 모듈불러오기
+import segmentation
+
+
 '''프로그램 시작'''
 
 app = FastAPI()
@@ -28,10 +36,28 @@ async def home(request : Request) :
 
 @app.get('/home_img/{img_num}')
 async def home_img(img_num : int) :
-    home_img = os.listdir("./static/output")
-    img_src = "./static/output/" + home_img[img_num]
+    global homeImg
+    homeImg = os.listdir("./static/output")
+    img_src = "./static/output/" + homeImg[img_num]
     return FileResponse(img_src)
 
+
+# @app.get('/home_imgshow/{img_num}', response_class = HTMLResponse)
+# async def home_imgshow(img_num : int) :
+#     img_src = "./static/output/" + homeImg[img_num]
+#     return templates.TemplateResponse("homeImg.html", context={"request": request})
+
+
+
+
+
+@app.get('/login', response_class = HTMLResponse)
+async def login(request : Request) :
+    return templates.TemplateResponse("login.html", context={"request": request})
+
+@app.post('/login_check/', response_class= HTMLResponse)
+async def login_check(request : Request):
+    return templates.TemplateResponse("home.html", context={"request":request})
 
 
 @app.get('/write', response_class = HTMLResponse)
@@ -46,8 +72,8 @@ async def runmodel(request : Request, files: UploadFile = File(...)):
     file_location = f"./static/input/{files.filename}"
     with open(file_location, "wb+") as file_object:
         file_object.write(files.file.read())
-
-    # file_path = './output/covid19.csv'
+    # face segmentation 실행
+    segmentation.segmentation(files.filename)
     return templates.TemplateResponse("output.html", context={"request": request})
 
 
