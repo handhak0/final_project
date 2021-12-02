@@ -12,6 +12,8 @@ import os
 import sys
 sys.path.append("C:/Users/sonso/Desktop/Git/멀티캠퍼스/04.FinalProject/손학영/Face_segmentation")
 
+import random
+
 # 모델 모듈불러오기
 import segmentation
 
@@ -36,7 +38,6 @@ async def home(request : Request) :
 
 @app.get('/home_img/{img_num}')
 async def home_img(img_num : int) :
-    global homeImg
     homeImg = os.listdir("./static/output")
     img_src = "./static/output/" + homeImg[img_num]
     return FileResponse(img_src)
@@ -46,8 +47,6 @@ async def home_img(img_num : int) :
 # async def home_imgshow(img_num : int) :
 #     img_src = "./static/output/" + homeImg[img_num]
 #     return templates.TemplateResponse("homeImg.html", context={"request": request})
-
-
 
 
 
@@ -68,12 +67,13 @@ async def write(request : Request) :
 
 @app.post("/runmodel/", response_class = HTMLResponse)
 async def runmodel(request : Request, files: UploadFile = File(...)):
-    global file_location
-    file_location = f"./static/input/{files.filename}"
+    global fnm
+    fnm = files.filename
+    file_location = f"./static/input/{fnm}"
     with open(file_location, "wb+") as file_object:
         file_object.write(files.file.read())
     # face segmentation 실행
-    segmentation.segmentation(files.filename)
+    segmentation.segmentation(fnm)
     return templates.TemplateResponse("output.html", context={"request": request})
 
 
@@ -85,14 +85,15 @@ async def output(request : Request) :
 
 @app.get('/output_img')
 async def home_img() :
-    output_src = file_location
+    global output_src
+    output_src = f"./static/output/{fnm}"
     return FileResponse(output_src)
 
 
 @app.get('/download')
 async def download() :
-    file_path = './static/output/20211119_101611_12.png'
-    return FileResponse(path = file_location, filename='character.png')
+    # file_path = './static/output/20211119_101611_12.png'
+    return FileResponse(path = output_src, filename='character.png')
 
 
 uvicorn.run(app, port=8000)

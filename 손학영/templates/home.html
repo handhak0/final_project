@@ -62,9 +62,15 @@
     </div>
     
     <script>
+        function randomNum(min, max){
+            var randNum = Math.floor(Math.random()*(max-min+1)) + min;
+            return randNum;
+        }
+
+
         var imgAll = document.querySelectorAll("#imgId");
         for (var i=0; i<6; i++){
-               imgAll[i].src = "/home_img/"+ i;
+               imgAll[i].src = "/home_img/"+ randomNum(0,50);
            }
 
         //var imgPathAll = document.querySelectorAll("#imgPathId");
