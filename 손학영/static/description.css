@@ -39,19 +39,7 @@ main {
     width : 330px;
     font-weight: 600;
 } */
-.img{
-    width: auto;
-    margin-top: 10px;
-    margin-left: 22.5pt;
-    margin-right: 22.5pt;
-    margin-bottom: 30pt;
-    position: relative;
-}
-.img_name {
-    text-align: center;
-    font-weight: bold;
-    margin: 20x;
-}
+
 div.select{
     height : 48px;
     padding-top: 12px;
@@ -124,4 +112,18 @@ div.download {
     text-align: center;
     font-size : 14px;
 
+}
+
+.img{
+    width: auto;
+    margin-top: 10px;
+    margin-left: 22.5pt;
+    margin-right: 22.5pt;
+    margin-bottom: 30pt;
+    position: relative;
+}
+.img_name {
+    text-align: center;
+    font-weight: bold;
+    margin: 20x;
 }
